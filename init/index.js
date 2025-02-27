@@ -1,4 +1,4 @@
-// isme data ka initializtion ka code likhenge
+
 
 const mongoose = require("mongoose");
 const initData = require("./data.js");
@@ -18,11 +18,9 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
-// using this function we initial database
 const initDB = async () => {
-  await Listing.deleteMany({}); // delete the previous data
-  await Listing.insertMany(initData.data); // initData apne aap mai object aur humne key
-  // data ko access krna hai
+  await Listing.deleteMany({}); 
+  await Listing.insertMany(initData.data); 
   console.log("data was initialized");
 };
 
